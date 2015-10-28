@@ -1,0 +1,20 @@
+<ion-navbar *navbar>
+    <a menu-toggle>
+        <icon menu></icon>
+    </a>
+    <ion-title>Contact List</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <ion-list>
+        <ion-header>
+            <ion-input>
+                <input type="text" placeholder="Search..." (input)="search($event, searchKey)">
+            </ion-input>
+        </ion-header>
+        <ion-item *ng-for="#contact of contacts" (click)="itemTapped($event, contact)">
+            <h2>{{contact.Name}}</h2>
+            <p>{{contact.Title}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
